@@ -1,0 +1,14 @@
+services:
+  ubuntu:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: bedrock-server
+    container_name: mcserver
+    ports:
+      - 19132:19132/tcp
+      - 19132:19132/udp
+    volumes:
+      - ./bedrock-server:/bedrock-server
+    stdin_open: true
+    tty: true
